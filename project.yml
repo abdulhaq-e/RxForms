@@ -1,0 +1,93 @@
+name: RxForms
+options:
+  deploymentTarget:
+    iOS: "11.0"
+  findCarthageFrameworks: false
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+  generateEmptyDirectories: true
+targets:
+  RxFormsExample:
+    type: application
+    platform: iOS
+    sources:
+      - path: RxFormsExample
+    settings:
+      base:
+        TEST_HOST: RxFormsTests
+        OTHER_LDFLAGS: -ObjC
+        CODE_SIGN_STYLE: Manual
+        PRODUCT_BUNDLE_IDENTIFIER: com.RxSwift.RxFormsExample
+    scheme:
+      testTargets:
+        - RxFormsTests
+      gatherCoverageData: true
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
+      - carthage: MDFInternationalization
+      - carthage: MDFTextAccessibility
+      - carthage: MaterialComponents
+      - carthage: MotionAnimator
+      - carthage: MotionInterchange
+      - carthage: SnapKit
+    info:
+      path: RxFormsExample/Info.plist
+      properties:
+        LSRequiresIPhoneOS: true
+        UILaunchStoryboardName: LaunchScreen
+        UIRequiredDeviceCapabilities: [armv7]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSAppTransportSecurity:
+            NSAllowsArbitraryLoads: true
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    entitlements:
+      path: RxFormsExample/RxFormsExamples.entitlements
+  RxForms:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Headers
+        buildPhase: headers
+        type: folder
+        headerVisibility: public
+      - Supporting Files
+    scheme:
+      testTargets:
+        - RxFormsTests
+      gatherCoverageData: true
+    info:
+      path: "Supporting Files/Info.plist"
+      properties:
+        CFBundleIdentifier: com.RxSwift.RxForms
+    dependencies:
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
+      - carthage: MDFInternationalization
+      - carthage: MDFTextAccessibility
+      - carthage: MaterialComponents
+      - carthage: MotionAnimator
+      - carthage: MotionInterchange
+  RxFormsTests:
+    type: bundle.unit-test
+    platform: iOS
+    info:
+      path: Tests/Info.plist
+    sources:
+      - path: Tests
+    dependencies:
+      - target: RxForms
+      - carthage: RxSwift
+      - carthage: RxTest
+      - carthage: RxBlocking
+      - carthage: Quick
+      - carthage: Nimble
+      - carthage: SwiftyPrototype
