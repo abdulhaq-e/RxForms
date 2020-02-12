@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol AbstractControlDirectiveProtocol {
-  
+    
   var control: AbstractControl { get }
   var value: Any? { get }
   var valid: Bool { get }

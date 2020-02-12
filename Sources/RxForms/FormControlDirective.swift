@@ -13,7 +13,7 @@ public class FormControlDirective: AbstractControlDirective {
   var name: String = ""
   var valueAccessor: ControlValueAccessor
   
-  var form: AbstractControl! {
+  public var form: AbstractControl! {
     didSet {
       self.setUpDirective()
     }
@@ -27,11 +27,8 @@ public class FormControlDirective: AbstractControlDirective {
     return nil
   }
   
-  public init(form: AbstractControl,
-    valueAccessors: ControlValueAccessor) {
-    self.form = form
+  public init(valueAccessors: ControlValueAccessor) {
     self.valueAccessor = valueAccessors
-    self.setUpDirective()
   }
   
   func viewToModelUpdate(newValue: Any?) {
@@ -104,7 +101,6 @@ func updateControl(control: FormControl, dir: AbstractControlDirective) {
   }
   
   control.setValue(value: control._pendingValue, emitModelToViewChange: false)
-  dir.valueAccessor.writeError(error: control.errors)
   dir.viewToModelUpdate(newValue: control._pendingValue)
   control._pendingChange = false
 }

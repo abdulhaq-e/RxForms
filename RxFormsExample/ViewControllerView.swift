@@ -12,9 +12,14 @@ import RxForms
 class ViewControllerView: UIView {
   
   // MARK: - Controls
-  var nameTextField: MDCTextField!
+  @TextFieldConstraints(maxLength: 10) var nameTextField: MDCTextField!
+  var passwordTextField: MDCTextField!
+  var submitButton: MDCButton!
+  
   var controller: MDCTextInputControllerOutlined!
+  var controller2: MDCTextInputControllerOutlined!
   let containerScheme = MDCContainerScheme()
+  
   
   var constraintsSet = false
   
@@ -33,6 +38,20 @@ class ViewControllerView: UIView {
       self.nameTextField.snp.makeConstraints { make in
         make.center.equalToSuperview()
         make.width.equalToSuperview().multipliedBy(0.5)
+        
+        self.passwordTextField.snp.makeConstraints { make in
+          make.width.equalTo(self.nameTextField)
+          make.leading.equalTo(self.nameTextField)
+          make.top.equalTo(self.nameTextField.snp.bottom).offset(20)
+        }
+        
+        self.submitButton.snp.makeConstraints { make in
+         
+          make.width.equalTo(self.passwordTextField)
+          
+         make.leading.equalTo(self.passwordTextField)
+          make.top.equalTo(self.passwordTextField.snp.bottom).offset(20)
+        }
       }
     }
     self.constraintsSet = true
@@ -47,6 +66,17 @@ private extension ViewControllerView {
     self.controller = MDCTextInputControllerOutlined(textInput: self.nameTextField)
     self.controller.applyTheme(withScheme: self.containerScheme)
     self.addSubview(self.nameTextField)
+    
+    self.passwordTextField = MDCTextField()
+    self.passwordTextField.placeholder = "Password"
+    self.controller2 = MDCTextInputControllerOutlined(textInput: self.passwordTextField)
+    self.controller2.applyTheme(withScheme: self.containerScheme)
+    self.addSubview(self.passwordTextField)
+    
+    self.submitButton = MDCButton()
+    self.submitButton.setTitle("Submit", for: .normal)
+    self.submitButton.applyContainedTheme(withScheme: self.containerScheme)
+    self.addSubview(self.submitButton)
   }
 }
 

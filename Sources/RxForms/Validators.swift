@@ -8,7 +8,53 @@
 import Foundation
 import RxSwift
 
-class Validators {
+public class Validators {
+  
+  public static func numbersValidators() -> ValidatorFn {
+    
+    return { (c: AbstractControl) in
+      let value = c.value as? String ?? ""
+
+      return _numbersValidators(text: value)
+    }
+  }
+  
+  public static func requiredValidator() -> ValidatorFn {
+    
+    return { (c: AbstractControl) in
+      let value = c.value as? String ?? ""
+      if value.isEmpty {
+        return ["required": "this field is required"]
+      }
+      return nil
+    }
+
+  }
+  
+  public static func luhnValidator() -> ValidatorFn {
+    
+    return { (c: AbstractControl) in
+      let value = c.value as? String ?? ""
+
+      if !_luhnCheck(value) {
+        return ["luhn": "invalid luhn"]
+      }
+      
+      return nil
+    }
+  }
+  
+  public static func exactLength(length: Int) -> ValidatorFn {
+    return { (c: AbstractControl) in
+      let value = c.value as? String ?? ""
+
+      if value.count != length {
+        return ["length": "length is incorrect"]
+      }
+      
+      return nil
+    }
+  }
   
   
   static func compose(validators: [ValidatorFn]?) -> ValidatorFn? {
@@ -54,4 +100,35 @@ func _mergeErrors(arrayOfErrors: [ValidationErrors?]) -> ValidationErrors? {
     
     return result
   }
+}
+
+func _numbersValidators(text: String) -> ValidationErrors? {
+  if CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: text)) {
+    return nil
+  }
+  
+  return ["numbers": "Invalid input, not numbers"]
+}
+
+func _luhnCheck(_ number: String) -> Bool {
+    var sum = 0
+    let digitStrings = number.reversed().map { String($0) }
+    
+    for tuple in digitStrings.enumerated() {
+        if let digit = Int(tuple.element) {
+            let odd = tuple.offset % 2 == 1
+            
+            switch (odd, digit) {
+            case (true, 9):
+                sum += 9
+            case (true, 0...8):
+                sum += (digit * 2) % 9
+            default:
+                sum += digit
+            }
+        } else {
+            return false
+        }
+    }
+    return sum % 10 == 0
 }
