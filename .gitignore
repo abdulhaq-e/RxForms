@@ -1,7 +1,6 @@
 .DS_Store
 /.build
 /Packages
-/*.xcodeproj
 xcuserdata/
 
 # Created by https://www.gitignore.io/api/swift,macos,xcode
@@ -103,15 +102,16 @@ fastlane/test_output
 ## Other
 
 ### Xcode Patch ###
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
+### Xcode Patch ###
+!.xcodeproj/*
+# !*.xcodeproj/project.pbxproj
+# !*.xcodeproj/xcshareddata/
+# !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
 
 # End of https://www.gitignore.io/api/swift,macos,xcode
 
 Carthage/*
-*.xcodeproj/**
+# *.xcodeproj/**
 Mock.generated.swift
