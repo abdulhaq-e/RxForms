@@ -56,6 +56,19 @@ public class Validators {
     }
   }
   
+  public static func minLength(length: Int) -> ValidatorFn {
+    return { (c: AbstractControl) in
+      let value = c.value as? String ?? ""
+
+      if value.count < length {
+        return ["minLength": "length is incorrect"]
+      }
+      
+      return nil
+    }
+  }
+  
+  
   
   static func compose(validators: [ValidatorFn]?) -> ValidatorFn? {
     if let validators = validators {
