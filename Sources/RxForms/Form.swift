@@ -446,7 +446,7 @@ public class AbstractControl: AbstractControlProtocol, AbstractControlInternalPr
     self._status = self.calculateStatus()
     
     if emitEvent {
-      //      self._statusChangesRelay.accept(self.status)
+      self._statusChangesRelay.accept(self.status)
     }
     
     if let parent = self.parent {
