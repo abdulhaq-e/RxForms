@@ -68,6 +68,9 @@ func setUpViewChangePipeline(control: FormControl, dir: AbstractControlDirective
     control._pendingChange = true
     control._pendingDirty = true
     
+    if control.updateOn == .submit {
+      control.setErrors(errors: nil, eventOptions: .init(emitEvent: true, onlySelf: false))
+    }
     if control.updateOn == .change {
       updateControl(control: control, dir: dir)
     }
