@@ -23,7 +23,7 @@ public class Validators {
     
     return { (c: AbstractControl) in
       let value = c.value as? String ?? ""
-      if value.isEmpty {
+      if value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
         return ["required": "this field is required"]
       }
       return nil
