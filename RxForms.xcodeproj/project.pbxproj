@@ -119,11 +119,11 @@
 		5380F9B385AAE3C595F6D817 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxRelay.framework; sourceTree = "<group>"; };
 		566F01D4794C2608A05FE1E6 /* ControlValueAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlValueAccessor.swift; sourceTree = "<group>"; };
 		572637EE8D39F6D8C7B46B0C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
-		6475E96650ED6B602F7C2D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6475E96650ED6B602F7C2D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		652F874C69A761E6FA64E236 /* SwitchValueAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchValueAccessor.swift; sourceTree = "<group>"; };
 		6EA51727F8C4D0B3B0FE2D9E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		6EAB5186F15C6BD17A60E50D /* RxFormsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RxFormsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		735A94D6E647206054F7F733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		735A94D6E647206054F7F733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74B4F647F44C645CB3015011 /* AbstractControlDirective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractControlDirective.swift; sourceTree = "<group>"; };
 		8131E14BA30A79BF76FDF19C /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		83A9406F06AE6F73C6B39FBD /* AbstractControlDirectiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractControlDirectiveProtocol.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		AD9E4B87B1F8ED4F9A3B70DB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
 		B1AA82FD19A1DE5E6100AB2B /* RxForms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxForms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B7C64918848CBD6A9DBD74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B67834D613DFF241BF173449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B67834D613DFF241BF173449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B78F9F271FCF67C223B90E87 /* TextFieldConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConstraints.swift; sourceTree = "<group>"; };
 		BA322135521038323D046CEC /* FormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormProtocol.swift; sourceTree = "<group>"; };
 		BE83673F791DF2BE7F6565A7 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MDFTextAccessibility.framework; sourceTree = "<group>"; };
@@ -415,7 +415,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
 			);
 			mainGroup = 70719C4E2BF751C18B71A66D;
@@ -777,7 +776,7 @@
 				4E5A2EDE2CE15FA0B4E816F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		57EFC355A533F2242901AD5E /* Build configuration list for PBXProject "RxForms" */ = {
 			isa = XCConfigurationList;
@@ -795,7 +794,7 @@
 				AFDE1CB5AC329326278E1493 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		E756C4F0E52846EF1AB8A219 /* Build configuration list for PBXNativeTarget "RxFormsExample" */ = {
 			isa = XCConfigurationList;
@@ -804,7 +803,7 @@
 				A2A0F30D9DA03FB2B4ED0636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
