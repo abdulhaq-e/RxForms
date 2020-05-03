@@ -7,13 +7,6 @@ options:
   indentWidth: 2
   tabWidth: 2
   generateEmptyDirectories: true
-packages:
-  RxSwift:
-    url: https://github.com/ReactiveX/RxSwift
-    majorVersion: 5.0.0
-  SnapKit:
-    url: https://github.com/SnapKit/SnapKit
-    majorVersion: 5.0.0
 targets:
   RxFormsExample:
     type: application
@@ -31,17 +24,15 @@ targets:
         - RxFormsTests
       gatherCoverageData: true
     dependencies:
-      - package: RxSwift
-      - package: RxSwift
-        product: RxCocoa
-      - package: RxSwift
-        product: RxRelay
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
       - carthage: MDFInternationalization
       - carthage: MDFTextAccessibility
       - carthage: MaterialComponents
       - carthage: MotionAnimator
       - carthage: MotionInterchange
-      - package: SnapKit
+      - carthage: SnapKit
     info:
       path: RxFormsExample/Info.plist
       properties:
@@ -77,25 +68,14 @@ targets:
       properties:
         CFBundleIdentifier: com.RxSwift.RxForms
     dependencies:
-      - package: RxSwift
-        product: RxSwift
-        weak: true
-      - package: RxSwift
-        product: RxCocoa
-        weak: true
-      - package: RxSwift
-        product: RxRelay
-        weak: true
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
       - carthage: MDFInternationalization
-        weak: true
       - carthage: MDFTextAccessibility
-        weak: true
       - carthage: MaterialComponents
-        weak: true
       - carthage: MotionAnimator
-        weak: true
       - carthage: MotionInterchange
-        weak: true
   RxFormsTests:
     type: bundle.unit-test
     platform: iOS
@@ -105,11 +85,9 @@ targets:
       - path: Tests
     dependencies:
       - target: RxForms
-      - package: RxSwift
-      - package: RxSwift
-        product: RxTest
-      - package: RxSwift
-        product: RxBlocking
+      - carthage: RxSwift
+      - carthage: RxTest
+      - carthage: RxBlocking
       - carthage: Quick
       - carthage: Nimble
       - carthage: SwiftyPrototype
