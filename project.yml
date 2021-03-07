@@ -24,15 +24,15 @@ targets:
         - RxFormsTests
       gatherCoverageData: true
     dependencies:
-      - carthage: RxSwift
-      - carthage: RxCocoa
-      - carthage: RxRelay
+      - framework: "Carthage/Build/RxSwift.xcframework"
+      - framework: "Carthage/Build/RxCocoa.xcframework"
+      - framework: "Carthage/Build/RxRelay.xcframework"
       - carthage: MDFInternationalization
       - carthage: MDFTextAccessibility
       - carthage: MaterialComponents
       - carthage: MotionAnimator
       - carthage: MotionInterchange
-      - carthage: SnapKit
+      - framework: "Carthage/Build/SnapKit.xcframework"
     info:
       path: RxFormsExample/Info.plist
       properties:
@@ -68,9 +68,9 @@ targets:
       properties:
         CFBundleIdentifier: com.RxSwift.RxForms
     dependencies:
-      - carthage: RxSwift
-      - carthage: RxCocoa
-      - carthage: RxRelay
+      - framework: "Carthage/Build/RxSwift.xcframework"
+      - framework: "Carthage/Build/RxCocoa.xcframework"
+      - framework: "Carthage/Build/RxRelay.xcframework"
       - carthage: MDFInternationalization
       - carthage: MDFTextAccessibility
       - carthage: MaterialComponents
@@ -85,9 +85,9 @@ targets:
       - path: Tests
     dependencies:
       - target: RxForms
-      - carthage: RxSwift
-      - carthage: RxTest
-      - carthage: RxBlocking
-      - carthage: Quick
-      - carthage: Nimble
-      - carthage: SwiftyPrototype
+      - framework: "Carthage/Build/RxSwift.xcframework"
+      - framework: "Carthage/Build/RxTest.xcframework"
+      - framework: "Carthage/Build/RxBlocking.xcframework"
+      - framework: "Carthage/Build/Quick.xcframework"
+      - framework: "Carthage/Build/Nimble.xcframework"
+      - framework: "Carthage/Build/SwiftyPrototype.xcframework"
