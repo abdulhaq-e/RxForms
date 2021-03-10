@@ -27,11 +27,11 @@ targets:
       - framework: "Carthage/Build/RxSwift.xcframework"
       - framework: "Carthage/Build/RxCocoa.xcframework"
       - framework: "Carthage/Build/RxRelay.xcframework"
-      - carthage: MDFInternationalization
-      - carthage: MDFTextAccessibility
-      - carthage: MaterialComponents
-      - carthage: MotionAnimator
-      - carthage: MotionInterchange
+      - framework: "TempCarthage/MDFInternationalization.xcframework"
+      - framework: "TempCarthage/MDFTextAccessibility.xcframework"
+      - framework: "TempCarthage/MaterialComponents.xcframework"
+      - framework: "TempCarthage/MotionAnimator.xcframework"
+      - framework: "TempCarthage/MotionInterchange.xcframework"
       - framework: "Carthage/Build/SnapKit.xcframework"
     info:
       path: RxFormsExample/Info.plist
@@ -71,11 +71,11 @@ targets:
       - framework: "Carthage/Build/RxSwift.xcframework"
       - framework: "Carthage/Build/RxCocoa.xcframework"
       - framework: "Carthage/Build/RxRelay.xcframework"
-      - carthage: MDFInternationalization
-      - carthage: MDFTextAccessibility
-      - carthage: MaterialComponents
-      - carthage: MotionAnimator
-      - carthage: MotionInterchange
+      - framework: "TempCarthage/MDFInternationalization.xcframework"
+      - framework: "TempCarthage/MDFTextAccessibility.xcframework"
+      - framework: "TempCarthage/MaterialComponents.xcframework"
+      - framework: "TempCarthage/MotionAnimator.xcframework"
+      - framework: "TempCarthage/MotionInterchange.xcframework"
   RxFormsTests:
     type: bundle.unit-test
     platform: iOS
